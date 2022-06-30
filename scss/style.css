@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.textmenu {
+  color: black;
+}
+
+nav div ul li a {
+  color: black;
+}
+
+.cover {
+  background-image: url(../assets/img/cover1.5.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 500px;
+}
+
+.cover h1 {
+  color: white;
+  font-size: 55px;
+  margin-left: 50px;
+  font-weight: 700;
+  letter-spacing: 0px;
+}
+
+.cover img {
+  margin-left: 52px;
+  width: 150px;
+}
+
+.cover a {
+  margin-top: 5px;
+  background-color: #e50000;
+  border-color: #e50000;
+  margin-left: 50px;
+}
+
+.titulozapas {
+  margin-left: 300px;
+  margin-bottom: -70px;
+}
+
+.titulozapas h2 {
+  font-style: italic;
+  font-weight: 600;
+}
+
+.titulozapas p {
+  font-style: italic;
+  margin-top: -5px;
+  font-weight: 600;
+}
+
+.gif {
+  margin-left: 220px;
+}
+
+.listastyle {
+  list-style: none;
+  text-align: center;
+  padding: 0px;
+}
+
+.position {
+  margin-top: 0px;
+  margin-bottom: 120px;
+  border: none;
+}
+
+.ecomercejs {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-row: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.ecomercejs .card {
+  border-radius: 10px;
+}
+
+.ecomercejs .card p {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 28px;
+}
+
+.ecomercejs h5 {
+  color: black;
+  font-weight: bold;
+}
+
+.ecomercejs img {
+  width: 300px;
+  margin-top: 10px;
+  padding: 15px;
+  margin-left: 3px;
+}
+
+.ecomercejs button {
+  color: white;
+  background-color: #3161d1;
+  border-color: #3161d1;
+  margin-left: 105px;
+  margin-bottom: 20px;
+}
+
+.form {
+  background-color: gainsboro;
+  width: 500px;
+  height: 200px;
+  margin-left: 300px;
+  color: black;
+  font-size: 20px;
+}
+/*# sourceMappingURL=style.css.map */
