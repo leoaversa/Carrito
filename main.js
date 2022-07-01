@@ -5,7 +5,7 @@ const productos = [
     id: "1",
     categoría: "asfalto", 
     modelo: "Lite Racer Rebold", 
-    cantidad: 1, 
+    cantidad: 5, 
     precio: 35000,
     img: "./assets/img/adi3.jpg",
     },
@@ -14,7 +14,7 @@ const productos = [
     id: "2",
     categoría: "asfalto", 
     modelo: "Adios Pro",  
-    cantidad: 1, 
+    cantidad: 5, 
     precio: 38000,
     img: "./assets/img/adi2.jpg",
     },
@@ -23,7 +23,7 @@ const productos = [
     id: "3",
     categoría: "asfalto", 
     modelo: "Ultraboost Lego",  
-    cantidad: 1, 
+    cantidad: 5, 
     precio: 42000,
     img: "./assets/img/LEGO.jpg",
     },
@@ -33,7 +33,7 @@ const productos = [
     id: "4",
     categoría: "trial", 
     modelo: "Trail Terrex Pro",  
-    cantidad: 1, 
+    cantidad: 5, 
     precio: 45000,
     img: "./assets/img/azules.jpg",
     },
@@ -43,7 +43,7 @@ const productos = [
     id: "5",
     categoría: "asfalto", 
     modelo: "Racer TR 21",  
-    cantidad: 1, 
+    cantidad: 5, 
     precio: 32000,
     img: "./assets/img/adi4.jpg",
     },
@@ -53,7 +53,7 @@ const productos = [
     id: "6",
     categoría: "trial", 
     modelo: "Terrex Two BOA",  
-    cantidad: 1, 
+    cantidad: 5, 
     precio: 39000,
     img: "./assets/img/adi5.jpg",
     },
@@ -63,7 +63,7 @@ const productos = [
     id: "7",
     categoría: "asfalto", 
     modelo: "Solarglide 5",  
-    cantidad: 1, 
+    cantidad: 5, 
     precio: 41000,
     img: "./assets/img/adi6.jpg",
 
@@ -73,7 +73,7 @@ const productos = [
     id: "8",
     categoría: "asfalto", 
     modelo: "Adizero Boston 10",  
-    cantidad: 1, 
+    cantidad: 5, 
     precio: 40000,
     img: "./assets/img/adi7.jpg",
 }
@@ -123,6 +123,7 @@ for (let i = 0; i < btnAgregar.length; i++) {
     element.addEventListener('click', agregarAlCarrito)
 
     
+    
 }
 
 
@@ -143,6 +144,15 @@ if(!enCarrito) {
     let carritoFiltrado = carrito.filter(prod => prod.id != enCarrito.id)
     carrito = [...carritoFiltrado, {...enCarrito, cantidad: enCarrito.cantidad + 1}]
 }
+
+Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Agregaste al carrito',
+    text: ("Zapatillas:" + " " + enCarrito.modelo),
+    showConfirmButton: false,
+    timer: 1500
+  })
 
 console.log(carrito)
 localStorage.setItem('carrito', JSON.stringify(carrito))

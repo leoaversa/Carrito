@@ -1,4 +1,6 @@
-let carrito2;
+
+
+let carrito;
 
 if (JSON.parse(localStorage.getItem('carrito'))){
     carrito = JSON.parse(localStorage.getItem('carrito'))
@@ -69,5 +71,7 @@ if(carrito.length == 0){
                 tbody.innerHTML += cart
             }
         }
+
+        
                 
    
