@@ -31,7 +31,7 @@
 <header>
 
   
-  <nav class="navbar navbar-expand-lg bg-light textmenu">
+  <nav class="navbar navbar-expand-lg bg-light textmenu fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand textmenu" href="./index.html">
         <img src="./assets/icon/adidas.png" alt="" width="34" class="d-inline-block align-text-top">
@@ -59,17 +59,19 @@
               <li><a class="dropdown-item" href="#">Adidas Classic</a></li>
             </ul>
           </li>
-        </li><a href="carrito.html">
+        </li>
+            <!-- CONTADOR DEL CARRITO -->
             <li class="nav-item">
               
-              <img src="./assets/icon/cart.png" alt="cart" width="25" class="d-inline-block align-text-top mt-2"></a>
-              <span id="cartCounter"></span></a>
+              <img src="./assets/icon/cart.png" alt="cart" width="25" class="d-inline-block align-text-top mt-2">
+              <span id="contador-carrito"></span>
               
             </li>
             </ul>
+            <!-- BUSCADOR -->
           <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="buscar" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Buscar</button>
+          <input id="buscador" class="form-control me-2" type="search" placeholder="asfalto o trial?" aria-label="Search">
+          <button id="filtrar" class="btn btn-outline-success">Filtrar</button>
         </form>
       </div>
     </div>
@@ -112,10 +114,16 @@
     <h2 class="wow fade" data-aos="fade-zoom-in"
     data-aos-duration="1000">ZAPATILLAS RUNNING</h2>
     <p class="wow fade" data-aos="fade-zoom-in"
-    data-aos-duration="2500">CREA TU ESTILO</p>
+    data-aos-duration="2500">CREA TU ESTILO</p>   
    
+   <!--  <div class="btnfiltro">
+      <form class="d-flex" role="search">
+      <input id="filtrar" class="form-control me-2" type="search" placeholder="asfalto o trial?" aria-label="Search">
+      <button class="btn btn-danger" type="submit">Filtrar</button>
+      </form>
+    </div> -->
 
-  </div>  
+  </div>    
 
 </div>
 
@@ -124,18 +132,72 @@
 <!-- JS -->
 
 <section class= "position card h-100 wow fadeIn" data-aos="fade-up" data-aos-duration="1500">
-  <div class="ecomercejs container" id="showAllProducts">
-   
+  
+  <div id="contenedor-productos" class="ecomercejs container"></div>
 
+  <div id="productoEnCarrito"></div>
+  <div id="showProducts" class="ecomercejs container"></div>
+  <div id="showBtnVerTodos"></div>
 
-  </div>
 </section>
 
 
+<div>
 
-<div id= "container" class="ecomercejs container"></div>
+  <p class="precio-total">Precio total: $ <span id="precioTotal"></span></p>
+
+  <button id="vaciar-carrito" class="vaciarCarrito btn btn-danger">Vaciar</button>
+
+</div>
+
+<!--FORMULARIO TERMINAR PEDIDO-->
+
+<div class="col-md-5 offset-md-1 mb-3 wow fadeIn formcompra" data-aos="fade-up"
+        data-aos-duration="1200">
+          <form>
+            <h5>¡Recibe tu compra!</h5>
+            <p>Ingresa tus datos</p>            
+          </form>
+        </div>
 
 
+<form class="needs-validation finalizar-compra" novalidate>
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="validationTooltip01">Nombre</label>
+      <input type="text" class="form-control" id="validationTooltip01" placeholder="tu nombre y apellido" value="" required>
+      <div class="valid-tooltip">
+        ingresado!
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="inputEmail3" placeholder="tu email">
+    </div>
+  </div>
+    </div>
+    
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationTooltip03">Ciudad</label>
+      <input type="text" class="form-control" id="validationTooltip03" placeholder="tu ciudad" required>
+      <div class="invalid-tooltip">
+        Ingresa tu ciudad
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="validationTooltip04">País</label>
+      <input type="text" class="form-control" id="validationTooltip04" placeholder="tu país" required>
+      <div class="invalid-tooltip">
+        Please provide a valid state.
+      </div>
+    </div>
+    
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit">Finalizar compra</button>
+</form>
 
 
 <!-- VIDEO -->
@@ -145,7 +207,6 @@
 <H4>Llegó la hora de salir a correr y participar en Run For The Oceans. Cada minuto es importante.</H4>
 <video class="videoceans" controls autoplay width=100% src="./assets/img/video1.mp4"></video>
 </div>
-
  -->
 
 <!-- FOOTER -->
@@ -222,8 +283,11 @@
   AOS.init();
 </script>
 
+
+
+<script src="./stock.js"></script>
 <script src="./main.js"></script>
-<script src="./carrito.js"></script>
+
 
 </body>
 </html>

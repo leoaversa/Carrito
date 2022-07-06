@@ -9,6 +9,8 @@
     color: black;
 }
 
+
+
 nav div ul li a{
     color: black;
     
@@ -59,7 +61,7 @@ nav div ul li a{
 }
 
 .gif{
-    margin-left: 220px;
+    margin-left: 10px;
 }
 
 .listastyle{
@@ -70,9 +72,9 @@ nav div ul li a{
 
 
 .position{
-    margin-top: 0px;
+    margin-top: 150px;
     margin-bottom: 120px;
-    border: none;
+    border: none;;
 }
 .ecomercejs{
     
@@ -88,16 +90,27 @@ nav div ul li a{
     
         p{
             text-align: center;
-            font-weight: bold;
-            margin-top: 28px;
+            font-weight: normal;
+            margin-top: 0px;
+            font-size: 17px;
         }
     }
 
 
-    h5{
+    h3{
         color: rgb(0, 0, 0);
-        font-weight: bold;
+        font-weight: 500;
+        font-size: 20px;
+        text-align: center;
+
     }
+
+    h4{
+        text-align: center;
+        font-size: 15px;
+
+    }
+
     img{
         width: 300px;
         margin-top: 10px;
@@ -110,8 +123,9 @@ nav div ul li a{
         color: rgb(255, 255, 255);
         background-color: rgb(49, 97, 209); 
         border-color: rgb(49, 97, 209); 
-        margin-left: 105px; 
-        margin-bottom: 20px; 
+        margin-left: 103px; 
+        margin-bottom: 24px;
+        width: 100px;
 
         
     }
@@ -130,5 +144,64 @@ nav div ul li a{
 
 
 
+.formulario-carrito{
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+    text-align: center;
+    align-items: center;
+    margin: 0 auto;
+    
 
+    img{
+        width: 100px;
+        height: 100px;
+
+    }
+    button{
+        width: 50px;
+        height: 40px;
+        margin-top: 0px;
+    }
+}
+
+.vaciarCarrito{
+    width: 100px;
+    margin-top: 50px;
+    margin-left: 300px;
+}
+
+.precio-total{
+    margin-left: 300px;
+    font-weight: 600;
+    margin-top: 0px;
+
+    
+}
+
+.btnfiltro{
+    width: 300px;
+    
+}
+
+.btn-vertodos{
+    margin-left: 300px;
+}
+
+.finalizar-compra{
+    margin: 0 auto;
+    background-color: rgb(245, 245, 245);
+    padding: 50px;
+    width: 1280px;
+
+
+}
+
+.formcompra{
+    padding: 20px;
+    margin-left: 280px;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    
+}
 

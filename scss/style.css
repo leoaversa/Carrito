@@ -56,7 +56,7 @@ nav div ul li a {
 }
 
 .gif {
-  margin-left: 220px;
+  margin-left: 10px;
 }
 
 .listastyle {
@@ -66,7 +66,7 @@ nav div ul li a {
 }
 
 .position {
-  margin-top: 0px;
+  margin-top: 150px;
   margin-bottom: 120px;
   border: none;
 }
@@ -86,13 +86,21 @@ nav div ul li a {
 
 .ecomercejs .card p {
   text-align: center;
-  font-weight: bold;
-  margin-top: 28px;
+  font-weight: normal;
+  margin-top: 0px;
+  font-size: 17px;
 }
 
-.ecomercejs h5 {
+.ecomercejs h3 {
   color: black;
-  font-weight: bold;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+}
+
+.ecomercejs h4 {
+  text-align: center;
+  font-size: 15px;
 }
 
 .ecomercejs img {
@@ -106,8 +114,9 @@ nav div ul li a {
   color: white;
   background-color: #3161d1;
   border-color: #3161d1;
-  margin-left: 105px;
-  margin-bottom: 20px;
+  margin-left: 103px;
+  margin-bottom: 24px;
+  width: 100px;
 }
 
 .form {
@@ -117,5 +126,65 @@ nav div ul li a {
   margin-left: 300px;
   color: black;
   font-size: 20px;
+}
+
+.formulario-carrito {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 800px;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+}
+
+.formulario-carrito img {
+  width: 100px;
+  height: 100px;
+}
+
+.formulario-carrito button {
+  width: 50px;
+  height: 40px;
+  margin-top: 0px;
+}
+
+.vaciarCarrito {
+  width: 100px;
+  margin-top: 50px;
+  margin-left: 300px;
+}
+
+.precio-total {
+  margin-left: 300px;
+  font-weight: 600;
+  margin-top: 0px;
+}
+
+.btnfiltro {
+  width: 300px;
+}
+
+.btn-vertodos {
+  margin-left: 300px;
+}
+
+.finalizar-compra {
+  margin: 0 auto;
+  background-color: whitesmoke;
+  padding: 50px;
+  width: 1280px;
+}
+
+.formcompra {
+  padding: 20px;
+  margin-left: 280px;
+  margin-top: 30px;
+  margin-bottom: 0px;
 }
 /*# sourceMappingURL=style.css.map */
