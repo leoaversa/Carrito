@@ -80,9 +80,22 @@ const eliminarDelCarrito = (prodId) => {
     const item = carrito.find((prod) => prod.id === prodId)
     const indice = carrito.indexOf(item)
     carrito.splice(indice,1)
+
+
+    Swal.fire({
+        position: 'top-center',
+        icon: 'success',
+        title: 'Producto eliminado',
+        showConfirmButton: false,
+        timer: 800
+      })
+    
+    
     actualizarCarrito()
 
 }
+
+
 
 
 const actualizarCarrito = () => {
@@ -106,7 +119,16 @@ const actualizarCarrito = () => {
         
         
         contenedorCarrito.appendChild(div)
+
+         //VACIAR CARRITO
+         botonVaciar.onclick = () => {
+            carrito.length = 0
+            div.innerHTML = ``
+            console.log(carrito)
+            botonVaciar.disp            
+            actualizarCarrito()
         
+        }
         localStorage.setItem ('carrito', JSON.stringify(carrito))
 
 
@@ -117,17 +139,12 @@ const actualizarCarrito = () => {
         console.log(total)
         
         precioTotal.innerText = (total)
+
+        
         
 
 
-        //VACIAR CARRITO
-        botonVaciar.onclick = () => {
-            carrito.length = 0
-            div.innerHTML = ``
-            console.log(carrito)            
-            actualizarCarrito()
-        
-        }
+       
 
         
 

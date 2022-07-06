@@ -145,6 +145,8 @@ nav div ul li a{
 
 
 .formulario-carrito{
+    background-color: #ECEEF0;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     width: 800px;
@@ -153,9 +155,11 @@ nav div ul li a{
     margin: 0 auto;
     
 
+    
+
     img{
         width: 100px;
-        height: 100px;
+        
 
     }
     button{
@@ -175,6 +179,7 @@ nav div ul li a{
     margin-left: 300px;
     font-weight: 600;
     margin-top: 0px;
+   
 
     
 }
@@ -190,7 +195,7 @@ nav div ul li a{
 
 .finalizar-compra{
     margin: 0 auto;
-    background-color: rgb(245, 245, 245);
+    background-color: #ECEEF0;
     padding: 50px;
     width: 1280px;
 

@@ -129,6 +129,8 @@ nav div ul li a {
 }
 
 .formulario-carrito {
+  background-color: #ECEEF0;
+  padding: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -145,7 +147,6 @@ nav div ul li a {
 
 .formulario-carrito img {
   width: 100px;
-  height: 100px;
 }
 
 .formulario-carrito button {
@@ -176,7 +177,7 @@ nav div ul li a {
 
 .finalizar-compra {
   margin: 0 auto;
-  background-color: whitesmoke;
+  background-color: #ECEEF0;
   padding: 50px;
   width: 1280px;
 }
