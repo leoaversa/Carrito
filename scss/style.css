@@ -56,7 +56,7 @@ nav div ul li a {
 }
 
 .gif {
-  margin-left: 10px;
+  margin-left: 200px;
 }
 
 .listastyle {
@@ -108,6 +108,7 @@ nav div ul li a {
   margin-top: 10px;
   padding: 15px;
   margin-left: 3px;
+  overflow: hidden;
 }
 
 .ecomercejs button {
@@ -117,6 +118,34 @@ nav div ul li a {
   margin-left: 103px;
   margin-bottom: 24px;
   width: 100px;
+}
+
+.inner {
+  overflow: hidden;
+}
+
+.inner img {
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+}
+
+.inner:hover img {
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+}
+
+.inner2 {
+  overflow: hidden;
+}
+
+.inner2 img {
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.inner2:hover img {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
 }
 
 .form {
@@ -138,7 +167,7 @@ nav div ul li a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 800px;
+  width: 1000px;
   height: 120px;
   text-align: center;
   -webkit-box-align: center;
@@ -148,8 +177,10 @@ nav div ul li a {
 }
 
 .formulario-carrito img {
-  width: 100px;
-  border-radius: 5px;
+  width: 200px;
+  margin-top: 10px;
+  padding: 15px;
+  margin-left: 3px;
 }
 
 .formulario-carrito button {
@@ -158,13 +189,44 @@ nav div ul li a {
   margin-top: 0px;
 }
 
+.divcart {
+  margin-left: 120px;
+  margin-top: 100px;
+}
+
+.logocart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100px;
+  margin-left: 180px;
+  margin-bottom: -158px;
+}
+
 .vaciarCarrito {
   width: 100px;
   margin-top: 50px;
   margin-left: 300px;
 }
 
+.carrito-vacio h2 {
+  margin-top: 100px;
+  font-size: 30px;
+  margin-left: 300px;
+  font-weight: 800;
+}
+
+.carrito-vacio p {
+  font-size: 15px;
+  margin-left: 420px;
+  font-weight: 400;
+}
+
 .precio-total {
+  font-size: 20px;
   margin-left: 300px;
   font-weight: 600;
   margin-top: 0px;
@@ -185,9 +247,16 @@ nav div ul li a {
   width: 1280px;
 }
 
+.tarjetas {
+  background-color: #fbfbfb;
+  padding: 5px;
+  width: 300px;
+  margin-left: 20px;
+}
+
 .formcompra {
   padding: 20px;
-  margin-left: 280px;
+  margin-left: 290px;
   margin-top: 30px;
   margin-bottom: 0px;
 }

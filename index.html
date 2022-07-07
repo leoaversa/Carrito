@@ -61,10 +61,10 @@
           </li>
         </li>
             <!-- CONTADOR DEL CARRITO -->
-            <li class="nav-item">
-              
-               <img src="./assets/icon/cart.png" alt="cart" width="25" class="d-inline-block align-text-top mt-2">
-               <span id="contador-carrito"></span>
+            <li class="nav-item inner">
+                <a href="#ver-carrito">
+               <img src="./assets/icon/cart.png"  alt="cart" width="25" class="d-inline-block align-text-top mt-2">
+               <span id="contador-carrito"></span></a>
               
               
             </li>
@@ -119,7 +119,7 @@
    
     <div class="btnfiltro">
       <form class="d-flex" role="search">
-      <input id="filtrar" class="form-control me-2" type="search" placeholder="asfalto o trial?" aria-label="Search">
+      <input id="buscador" class="form-control me-2" type="search" placeholder="asfalto o trial?" aria-label="Search">
       <button class="btn btn-danger" type="submit">Filtrar</button>
       </form>
     </div>
@@ -132,13 +132,24 @@
 
 <!-- JS -->
 
+
+
 <section class= "position card h-100" class="wow fade" data-aos="fade-zoom-in"
-data-aos-duration="3500">
+    data-aos-duration="2500">
   
   <div id="contenedor-productos" class="ecomercejs container"></div>
+  <a id="ver-carrito"></a>
   <div id="showProducts" class="ecomercejs container"></div>
+
+  
+  <div id="showAllProducts" class="carrito-vacio" data-aos="fade-zoom-in"
+  data-aos-duration="3500">
+    
+  </div>
+
+  
   <div id="productoEnCarrito" class="wow fade" data-aos="fade-zoom-in"
-  data-aos-duration="1000"></div>"></div>
+  data-aos-duration="1000"></div></div>
   
   <div id="showBtnVerTodos"></div>
 
@@ -200,6 +211,7 @@ data-aos-duration="3500">
     </div>
   </div>
   <button id="terminarPedido" class="btn btn-primary" type="submit">Finalizar compra</button>
+  <img class="tarjetas" src="./assets/img/tarjetas.webp" alt="">
 </form>
 
 
@@ -218,35 +230,35 @@ data-aos-duration="3500">
     data-aos-duration="1000">
       <div class="row">
         <div class="col-6 col-md-2 mb-3">
-          <h5>Section</h5>
+          <h5>Ropa</h5>
           <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Hombre</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Buzos</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Camperas</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Short</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Gorras</a></li>
           </ul>
         </div>
   
         <div class="col-6 col-md-2 mb-3">
-          <h5>Section</h5>
+          <h5>Calzado</h5>
           <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Negras</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Blancas</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Trekking</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Running</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Botitas</a></li>
           </ul>
         </div>
   
         <div class="col-6 col-md-2 mb-3">
-          <h5>Section</h5>
+          <h5>Accesorios</h5>
           <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Mochilas</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Medias</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Gorras</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Guantes</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pelotas</a></li>
           </ul>
         </div>
   

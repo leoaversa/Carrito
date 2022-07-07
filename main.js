@@ -34,7 +34,8 @@ stockProductos.forEach((producto) => {
     div.classList.add('card')
 
     div.innerHTML += `
-    <img src=${producto.img} alt="">
+    <div class= "inner">
+    <img src=${producto.img} alt=""></div>
     <h3>${producto.modelo}</h3>
     <h4>${producto.categoría}</h4>
     <p>$${producto.precio.toLocaleString()}</p>
@@ -53,7 +54,7 @@ stockProductos.forEach((producto) => {
             position: 'top-end',
             icon: 'success',
             title: 'Agregaste al carrito',
-            text: ("Adidas:" + " " + producto.modelo),
+            text: (producto.modelo),
             showConfirmButton: true,
             timer: 2000
           })
@@ -66,8 +67,31 @@ stockProductos.forEach((producto) => {
 
 mostrarproductos()
 
+/* if(!carrito.length) {
+    let altercart = getElementById("showAllProducts")
+    showProducts.innerText("El carrito esta vacío")
+
+} */
+
+
+let altercart = document.createElement('h3')
+altercart.innerHTML = `
+<div class= "divcart"><img class="logocart" src="./assets/icon/adidas.png" alt="">
+<h2>EL CARRITO ESTÁ VACÍO</h2></div>
+<p>Una vez que añadas algo a tu carrito, aparecerá acá. ¿Listo para empezar?</p>
+`
+
+
+const avisoVacio = () => {
+if(!carrito.length) {
+    showAllProducts.append(altercart) 
+}}
+avisoVacio()
+
+
 //AGREGAR PRODUCTOS AL CARRITO
 const agregarAlCarrito = (prodId) => {
+    showAllProducts.innerHTML=""
     const existe = carrito.some (prod => prod.id === prodId)
 
     if(existe){
@@ -83,12 +107,20 @@ const agregarAlCarrito = (prodId) => {
     console.log(carrito)
     }
 
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+
     
+    
+
+
     actualizarCarrito()
     
     
     
 }
+
+
+
 
 
 
@@ -106,7 +138,7 @@ const eliminarDelCarrito = (prodId) => {
         timer: 800
       })
     
-    
+      
     actualizarCarrito()
     
 
@@ -117,6 +149,7 @@ botonVaciar.onclick = () => {
     carrito.length = 0    
     precioTotal.innerText = ""
     contadorCarrito.innerText = (carrito.length)
+    avisoVacio()
     console.log(carrito)                       
     actualizarCarrito()    
 
@@ -126,17 +159,19 @@ botonVaciar.onclick = () => {
 
 
 const actualizarCarrito = () => {
+    
     contenedorCarrito.innerHTML = ""
 
     carrito.forEach((prod) => {
 
         const div = document.createElement('div')
-        div.classList.add("formulario-carrito", "mt-5", "container");
+        div.classList.add("formulario-carrito", "mt-5", "container", "inner2");
         div.innerHTML += `
         <img src=${prod.img} alt="">
         <p>${prod.modelo}</p>
-        <p>Precio: $${prod.precio}</p>
+        <p>$${prod.precio}</p>
         <p>Cantidad: <span id= "cantidad">${prod.cantidad}</span></p>
+        <div><img src= "./assets/img/tarjetas.webp" alt=""></div>
         
         <button onclick= "eliminarDelCarrito(${prod.id})" type="button" class="btn btn-danger">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
@@ -170,6 +205,8 @@ const actualizarCarrito = () => {
         
     })
 }
+        
+
         //FILTRAR 
         const buscador = document.getElementById('buscador')
         const filtrar = document.getElementById('filtrar')
@@ -190,31 +227,42 @@ const actualizarCarrito = () => {
                 
                 
                 const divfilter = document.createElement('div')
-                divfilter.classList.add("container", "card");
+                divfilter.classList.add("card", "productos-filtrados");
                 divfilter.innerHTML += `
-                <img src=${filter.img} alt="">  
-                <p>${filter.modelo}</p>
-                <p>Precio: ${filter.precio}</p>
+                <div class= "inner">
+                <img src=${filter.img} alt=""></div>  
+                <h3>${filter.modelo}</h3>
+                <h4>${filter.categoría}</h4>
+                <p>$${filter.precio.toLocaleString()}</p>
                 <p>Cantidad: <span id= "cantidad">${filter.cantidad}</span></p>
                 <button ${filter.id} id="agregar${filter.id}" class='btn btn-primary'>Agregar</button>
                 `
                 
                 showProducts.append(divfilter)
                 
+                
 
                 
         
-        })
+            })
 
-        vertodos.onclick = () => {
+            vertodos.onclick = () => {
             contenedorProductos.innerHTML=""
             showProducts.innerHTML = `` 
             mostrarproductos() 
             
 
-        }
+            }
+            
+            
 
-}    
+        
+
+        }    
+
+        
+
+        
     
         buscador.onchange = () => {
             contenedorProductos.innerHTML= ""          

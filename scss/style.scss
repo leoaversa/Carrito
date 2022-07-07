@@ -61,7 +61,7 @@ nav div ul li a{
 }
 
 .gif{
-    margin-left: 10px;
+    margin-left: 200px;
 }
 
 .listastyle{
@@ -116,6 +116,7 @@ nav div ul li a{
         margin-top: 10px;
         padding: 15px;
         margin-left: 3px;
+        overflow: hidden;
         
     }
     button{
@@ -130,6 +131,35 @@ nav div ul li a{
         
     }
 }
+
+
+
+.inner{
+    
+    overflow: hidden;
+}
+
+.inner img{
+    transition: all 0.8s ease;
+}
+
+.inner:hover img{
+    transform: scale(1.3);
+}
+
+.inner2{
+    
+    overflow: hidden;
+}
+
+.inner2 img{
+    transition: all 1s ease;
+}
+
+.inner2:hover img{
+    transform: scale(1.5);
+}
+
 
 .form{
         background-color: gainsboro;
@@ -150,18 +180,22 @@ nav div ul li a{
     padding: 20px;
     display: flex;
     justify-content: space-between;
-    width: 800px;
+    width: 1000px;
     height: 120px;
     text-align: center;
     align-items: center;
     margin: 0 auto;
+
+    
     
 
     
 
     img{
-        width: 100px;
-        border-radius: 5px;
+        width: 200px;
+        margin-top: 10px;
+        padding: 15px;
+        margin-left: 3px;
         
 
     }
@@ -172,13 +206,43 @@ nav div ul li a{
     }
 }
 
+.divcart{
+    margin-left: 120px;
+    margin-top: 100px;
+}
+
+.logocart{
+    display: flex;
+    justify-content: center;
+    width: 100px;
+    margin-left: 180px;
+    margin-bottom: -158px;
+
+}
+
 .vaciarCarrito{
     width: 100px;
     margin-top: 50px;
     margin-left: 300px;
 }
 
+.carrito-vacio{
+    h2{
+        margin-top: 100px;
+        font-size: 30px;
+        margin-left: 300px;
+        font-weight: 800;
+        
+    }
+    p{
+        font-size: 15px;
+        margin-left: 420px;
+        font-weight: 400;
+    }
+}
+
 .precio-total{
+    font-size: 20px;
     margin-left: 300px;
     font-weight: 600;
     margin-top: 0px;
@@ -205,9 +269,16 @@ nav div ul li a{
 
 }
 
+.tarjetas{
+    background-color: #fbfbfb;
+    padding: 5px;
+    width: 300px;
+    margin-left: 20px;
+}
+
 .formcompra{
     padding: 20px;
-    margin-left: 280px;
+    margin-left: 290px;
     margin-top: 30px;
     margin-bottom: 0px;
     
