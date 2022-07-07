@@ -68,13 +68,29 @@ mostrarproductos()
 
 //AGREGAR PRODUCTOS AL CARRITO
 const agregarAlCarrito = (prodId) => {
+    const existe = carrito.some (prod => prod.id === prodId)
 
+    if(existe){
+        const prod = carrito.map (prod =>{
+            if (prod.id === prodId){
+                prod.cantidad++
+            }
+        })
+    } else {
+    
     const item = stockProductos.find((prod) => prod.id === prodId)
     carrito.push(item)
-    actualizarCarrito()
     console.log(carrito)
+    }
+
+    
+    actualizarCarrito()
+    
+    
     
 }
+
+
 
 const eliminarDelCarrito = (prodId) => {
     const item = carrito.find((prod) => prod.id === prodId)
@@ -92,6 +108,17 @@ const eliminarDelCarrito = (prodId) => {
     
     
     actualizarCarrito()
+    
+
+}
+
+//VACIAR CARRITO
+botonVaciar.onclick = () => {
+    carrito.length = 0    
+    precioTotal.innerText = ""
+    contadorCarrito.innerText = (carrito.length)
+    console.log(carrito)                       
+    actualizarCarrito()    
 
 }
 
@@ -119,17 +146,11 @@ const actualizarCarrito = () => {
         
         
         contenedorCarrito.appendChild(div)
+                
 
-         //VACIAR CARRITO
-         botonVaciar.onclick = () => {
-            carrito.length = 0
-            div.innerHTML = ``
-            console.log(carrito)
-            botonVaciar.disp            
-            actualizarCarrito()
+         
+
         
-        }
-        localStorage.setItem ('carrito', JSON.stringify(carrito))
 
 
         //SUMAR PRECIOS EN CARRITO
@@ -138,18 +159,14 @@ const actualizarCarrito = () => {
         carritoPrecioActual) => carritoPrecioTotal + carritoPrecioActual, 0);
         console.log(total)
         
+        
         precioTotal.innerText = (total)
-
-        
-        
-
-
-       
 
         
 
         //CONTADOR CARRITO DEL NAV
         contadorCarrito.innerText = (carrito.length)
+        
         
     })
 }
@@ -159,16 +176,19 @@ const actualizarCarrito = () => {
 
         function filtrarPorCat(){
 
+            
             let vertodos = document.createElement ('button')
             vertodos.innerText = ("Ver todos")
             vertodos.classList.add ('btn', 'btn-secondary', 'mt-5','btn-vertodos')
             showBtnVerTodos.append(vertodos)
+            contenedorProductos.innerHTML= ""
 
             const filtrarproductos = stockProductos.filter((prod) => prod.categoría === buscador.value)
             console.log(filtrarproductos)
 
             filtrarproductos.forEach((filter) => {
-
+                
+                
                 const divfilter = document.createElement('div')
                 divfilter.classList.add("container", "card");
                 divfilter.innerHTML += `
@@ -176,35 +196,42 @@ const actualizarCarrito = () => {
                 <p>${filter.modelo}</p>
                 <p>Precio: ${filter.precio}</p>
                 <p>Cantidad: <span id= "cantidad">${filter.cantidad}</span></p>
-                <button ${filter.id} class='btn boton-filtrar btn-primary'>Agregar</button>
+                <button ${filter.id} id="agregar${filter.id}" class='btn btn-primary'>Agregar</button>
                 `
                 
                 showProducts.append(divfilter)
+                
 
                 
         
         })
 
         vertodos.onclick = () => {
+            contenedorProductos.innerHTML=""
             showProducts.innerHTML = `` 
             mostrarproductos() 
+            
 
         }
 
 }    
     
         buscador.onchange = () => {
-            contenedorProductos.innerHTML += ``            
+            contenedorProductos.innerHTML= ""          
             filtrarPorCat()
+            
         }
 
         
 
-        filtrar.onclick = () => {
-            mostrarproductos.innerHTML= ``
+        filtrar.addEventListener ('click', () => {
+            contenedorProductos.innerHTML= ""
             filtrarPorCat()
-        }    
+        })
+
+        
     
+
         // TERMINAR COMPRA
 
          function terminarCompra () {
@@ -225,7 +252,7 @@ const actualizarCarrito = () => {
          console.log(usuarioCompra)
          console.log(carrito)
 
-         let  = document.getElementById("terminarPedido")
+         let = document.getElementById("terminarPedido")
 
          terminarPedido.onclick = (e) => {
             e.preventDefault()

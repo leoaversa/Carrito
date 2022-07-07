@@ -129,7 +129,8 @@ nav div ul li a {
 }
 
 .formulario-carrito {
-  background-color: #ECEEF0;
+  border-radius: 5px;
+  background-color: #fbfbfb;
   padding: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -138,6 +139,7 @@ nav div ul li a {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 800px;
+  height: 120px;
   text-align: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -147,6 +149,7 @@ nav div ul li a {
 
 .formulario-carrito img {
   width: 100px;
+  border-radius: 5px;
 }
 
 .formulario-carrito button {
