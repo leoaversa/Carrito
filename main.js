@@ -107,27 +107,21 @@ const agregarAlCarrito = (prodId) => {
     console.log(carrito)
     }
 
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-
-    
+    localStorage.setItem("carrito", JSON.stringify(carrito));   
     
 
 
-    actualizarCarrito()
-    
+    actualizarCarrito()    
     
     
 }
-
-
-
-
 
 
 const eliminarDelCarrito = (prodId) => {
     const item = carrito.find((prod) => prod.id === prodId)
     const indice = carrito.indexOf(item)
     carrito.splice(indice,1)
+    
 
 
     Swal.fire({
@@ -148,13 +142,12 @@ const eliminarDelCarrito = (prodId) => {
 botonVaciar.onclick = () => {
     carrito.length = 0    
     precioTotal.innerText = ""
-    contadorCarrito.innerText = (carrito.length)
     avisoVacio()
-    console.log(carrito)                       
+    contadorCarrito.innerText = (carrito.length) 
+    localStorage.setItem('carrito',[]);                     
     actualizarCarrito()    
 
 }
-
 
 
 
@@ -180,8 +173,7 @@ const actualizarCarrito = () => {
         `
         
         
-        contenedorCarrito.appendChild(div)
-                
+        contenedorCarrito.appendChild(div)      
 
          
 
@@ -200,8 +192,7 @@ const actualizarCarrito = () => {
         
 
         //CONTADOR CARRITO DEL NAV
-        contadorCarrito.innerText = (carrito.length)
-        
+        contadorCarrito.innerText = (carrito.length)        
         
     })
 }
@@ -238,8 +229,7 @@ const actualizarCarrito = () => {
                 <button ${filter.id} id="agregar${filter.id}" class='btn btn-primary'>Agregar</button>
                 `
                 
-                showProducts.append(divfilter)
-                
+                showProducts.append(divfilter)              
                 
 
                 
@@ -254,13 +244,9 @@ const actualizarCarrito = () => {
 
             }
             
-            
+      
 
-        
-
-        }    
-
-        
+        }           
 
         
     
