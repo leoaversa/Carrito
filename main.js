@@ -281,10 +281,26 @@ const actualizarCarrito = () => {
         
         const filtrar = () =>{
             
+            boton.addEventListener('click', () => {
+            contenedorProductos.innerHTML=""
+            filtrarPorCat()
+
+        })}
+
+        filtrar()
+
+        
+
+        
+        
+
+
+        /* const filtrar = () =>{
+            
             console.log(formulario.value)
         }
         
-        boton.addEventListener('click', filtrar )
+        boton.addEventListener('click', filtrar ) */
 
         
         
@@ -292,13 +308,13 @@ const actualizarCarrito = () => {
 
         
     
-        /* buscador.onchange = () => {
+        buscador.onchange = () => {
             
             contenedorProductos.innerHTML= ""          
             filtrarPorCat()
             buscador.preventDefault();
             
-        } */
+        }
 
         
         
