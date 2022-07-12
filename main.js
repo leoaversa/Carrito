@@ -74,6 +74,10 @@ mostrarproductos()
 } */
 
 
+//MODAL
+const modal = document.getElementById("CarritoEnModal")
+
+
 let altercart = document.createElement('h3')
 altercart.innerHTML = `
 <div class= "divcart"><img class="logocart" src="./assets/icon/adidas.png" alt="">
@@ -104,12 +108,13 @@ const agregarAlCarrito = (prodId) => {
     
     const item = stockProductos.find((prod) => prod.id === prodId)
     carrito.push(item)
-    console.log(carrito)
+    console.log(carrito)    
     }
 
     localStorage.setItem("carrito", JSON.stringify(carrito));   
     
 
+    
 
     actualizarCarrito()    
     
@@ -178,7 +183,8 @@ const actualizarCarrito = () => {
         `
         
         
-        contenedorCarrito.appendChild(div)      
+        contenedorCarrito.appendChild(div)  
+            
 
          
 
@@ -201,6 +207,10 @@ const actualizarCarrito = () => {
         
      })
 }
+
+       /*  const modal = document.getElementById("CarritoEnModal")
+        modal.innerText = ("holas")
+        contenedorCarrito.append(modal) */
         
 
         //FILTRAR 
@@ -265,21 +275,16 @@ const actualizarCarrito = () => {
             }
         }   
         
-        const buscador = document.querySelector('#buscador');
-        const filtrar = document.querySelector('#filtrar');
+        const formulario = document.getElementById("buscar")
+        const boton = document.getElementById("filtrar")
         
-        const btnBuscar = () => {
+        
+        const filtrar = () =>{
             
-            console.log(buscador.value);
-           }
-
-          
-           const dale = () => {
-           e.preventDefault()
-
-        filtrar.addEventListener('click', btnBuscar)}
-
-        btnBuscar()
+            console.log(formulario.value)
+        }
+        
+        boton.addEventListener('click', filtrar )
 
         
         

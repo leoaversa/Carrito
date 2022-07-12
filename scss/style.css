@@ -130,8 +130,8 @@ nav div ul li a {
 }
 
 .inner:hover img {
-  -webkit-transform: scale(1.3);
-          transform: scale(1.3);
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
 }
 
 .inner2 {
@@ -259,6 +259,10 @@ nav div ul li a {
   margin-left: 290px;
   margin-top: 30px;
   margin-bottom: 0px;
+}
+
+.modalform {
+  width: 100%;
 }
 
 /* MEDIA QUERYS */

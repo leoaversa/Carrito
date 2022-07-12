@@ -70,10 +70,10 @@
             </li>
             </ul>
             <!-- BUSCADOR -->
-          <form class="d-flex" role="search">
-            <input id="buscador" class="form-control me-2" placeholder="asfalto o trial?" aria-label="Search">
-            <button id="filtrar" class="btn">Filtrar</button>
-          </form>
+          <div class="d-flex" role="search">
+            <input id="buscar" class="form-control me-2 d-flex" placeholder="asfalto o trial?" aria-label="Search">
+            <button id="filtrar" class="btn btn-primary">Filtrar</button>
+          </div>
       </div>
     </div>
   </nav>
@@ -104,10 +104,7 @@
 </section>
 
 <img src="./assets/img/gifpromo.gif" class="gif" alt="gif">
-<div>
-  <input id="buscador"  type="text">
-<button id="filtrar">buscar</button>
-</div>
+
 
 <!-- TITULOS ZAPATILLAS -->
 
@@ -122,10 +119,10 @@
     data-aos-duration="2500">CREA TU ESTILO</p>   
    
     <div class="btnfiltro">
-      <form class="d-flex">
-      <input id="buscador" class="form-control me-2" type="search" placeholder="asfalto o trial?" aria-label="Search">
-      <button id="filtrar" class="btn btn-danger" type="submit">Filtrar</button>
-      </form>
+      
+      <input id="buscar" class="form-control me-2" type="text" placeholder="asfalto o trial?">
+      <button id="filtrar" class="btn btn-danger">Filtrar</button>
+      
     </div>
 
   </div>    
@@ -167,6 +164,32 @@
   <button id="vaciar-carrito" class="vaciarCarrito btn btn-danger">Vaciar</button>
 
 </div>
+
+<!-- MODAL -->
+
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button> -->
+
+<!-- Modal -->
+<!-- <div class="modal fade modalform" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-target="#exampleModalLong">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Carrito de Compras</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body formulario-carrito mt-5 container inner2">
+        <div id="CarritoEnModal"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Finalizar compra</button>
+      </div>
+    </div>
+  </div>
+</div> -->
 
 <!--FORMULARIO TERMINAR PEDIDO-->
 
@@ -306,7 +329,7 @@
 
 <script src="./stock.js"></script>
 <script src="./main.js"></script>
-<script src="./prueba.js"></script>
+
 
 
 </body>
