@@ -60,19 +60,19 @@
             </ul>
           </li>
         </li>
-            <!-- CONTADOR DEL CARRITO -->
-            <li class="nav-item inner">
-                <a href="#ver-carrito">
-               <img src="./assets/icon/cart.png"  alt="cart" width="25" class="d-inline-block align-text-top mt-2">
-               <span id="contador-carrito"></span></a>
-              
-              
-            </li>
-            </ul>
+             </ul>
             <!-- BUSCADOR -->
           <div class="d-flex" role="search">
-            <input id="buscar" class="form-control me-2 d-flex" placeholder="asfalto o trial?" aria-label="Search">
-            <button id="filtrar" class="btn btn-primary">Filtrar</button>
+          </li>
+          <!-- CONTADOR DEL CARRITO -->
+          <li class="nav-item inner icono-contador">
+              <a href="#ver-carrito">
+              <span id="contador-carrito"></span>
+             <img src="./assets/icon/cart.png"  alt="cart" width="25" class="d-inline-block align-text-top mt-2"></a>
+             
+            
+            
+          </li>
           </div>
       </div>
     </div>
@@ -97,7 +97,8 @@
     
     <a href="#zapatillas" type="button" class="btn btn-danger btn-sm class wow fade" data-aos="fade-zoom-in"
     data-aos-duration="2500">Nuestros Productos</a>
-
+    
+    
   </div>
 
 
@@ -118,11 +119,12 @@
     <p class="wow fade" data-aos="fade-zoom-in"
     data-aos-duration="2500">CREA TU ESTILO</p>   
    
+    <!-- BOTON PARA FILTRAR PRODUCTOS -->
     <div class="btnfiltro">
-      
-      <input id="buscar" class="form-control me-2" type="text" placeholder="asfalto o trial?">
-      <button id="filtrar" class="btn btn-danger">Filtrar</button>
-      
+
+      <button id="filtrar" class="btn btn-dark" type="button">Filtrar</button>
+      <input id="buscador" class="form-control me-2" type="text" placeholder="asfalto o trial?">
+            
     </div>
 
   </div>    
@@ -152,7 +154,10 @@
   <div id="productoEnCarrito" class="wow fade" data-aos="fade-zoom-in"
   data-aos-duration="1000"></div></div>
   
-  <div id="showBtnVerTodos"></div>
+    <a href="#zapatillas" type="button">
+    <div id="showBtnVerTodos" data-aos="fade-zoom-in"
+    data-aos-duration="2500"></div></a>
+
 
 </section>
 
@@ -237,7 +242,7 @@
     
     </div>
   </div>
-  <button id="terminarPedido" class="btn btn-primary" type="submit">Finalizar compra</button>
+  <button id="terminarPedido" class="btn btn-primary" type="button">Finalizar compra</button>
   <img class="tarjetas" src="./assets/img/tarjetas.webp" alt="">
 </form>
 
@@ -297,7 +302,7 @@
             <div class="d-flex flex-column flex-sm-row w-100 gap-2">
               <label for="newsletter1" class="visually-hidden">Email address</label>
               <input id="newsletter1" type="text" class="form-control" placeholder="Ingresa tu email">
-              <button class="btn btn-primary" type="button">Suscríbete</button>
+              <button id="suscribete" class="btn btn-primary" type="button">Suscríbete</button>
             </div>
           </form>
         </div>
@@ -327,8 +332,9 @@
 
 
 
-<script src="./stock.js"></script>
-<script src="./main.js"></script>
+<script src="./js/stock.js"></script>
+<script src="./js/main.js"></script>
+<script src="./js/alertas.js"></script>
 
 
 

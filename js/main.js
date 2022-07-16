@@ -14,7 +14,6 @@ const showAllProducts = document.getElementById('showAllProducts')
 
 
 
-
 let carrito = []
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -44,12 +43,12 @@ stockProductos.forEach((producto) => {
 
     contenedorProductos.appendChild(div)
 
-    
+    //Botón para agregar productos
     const boton = document.getElementById(`agregar${producto.id}`)
     boton.addEventListener('click', () => {
         agregarAlCarrito(producto.id)
 
-        //SWEET ALERT
+        //ALERT
         Swal.fire({
             position: 'top-end',
             icon: 'success',
@@ -57,43 +56,33 @@ stockProductos.forEach((producto) => {
             text: (producto.modelo),
             showConfirmButton: true,
             timer: 2000
-          })
+            })
 
         
-    })   
-
+    }) 
 })
 }
 
 mostrarproductos()
 
-/* if(!carrito.length) {
-    let altercart = getElementById("showAllProducts")
-    showProducts.innerText("El carrito esta vacío")
 
-} */
-
-
-//MODAL
-const modal = document.getElementById("CarritoEnModal")
-
-
+// AVISO: EL CARRITO ESTÁ VACÍO
 let altercart = document.createElement('h3')
 altercart.innerHTML = `
 <div class= "divcart"><img class="logocart" src="./assets/icon/adidas.png" alt="">
 <h2>EL CARRITO ESTÁ VACÍO</h2></div>
 <p>Una vez que añadas algo a tu carrito, aparecerá acá. ¿Listo para empezar?</p>
 `
-
-
 const avisoVacio = () => {
 if(!carrito.length) {
     showAllProducts.append(altercart) 
 }}
+
 avisoVacio()
 
 
-//AGREGAR PRODUCTOS AL CARRITO
+
+//AGREGAR PRODUCTOS AL CARRITO, CANTIDAD++
 const agregarAlCarrito = (prodId) => {
     showAllProducts.innerHTML=""
     const existe = carrito.some (prod => prod.id === prodId)
@@ -113,21 +102,16 @@ const agregarAlCarrito = (prodId) => {
 
     localStorage.setItem("carrito", JSON.stringify(carrito));   
     
-
-    
-
+   
     actualizarCarrito()    
     
     
 }
 
-
-
-
 //VACIAR CARRITO
 botonVaciar.onclick = () => {
-    carrito.length = 0    
     precioTotal.innerText = ""
+    carrito.length = 0        
     avisoVacio()
     contadorCarrito.innerText = (carrito.length) 
     localStorage.setItem('carrito',[]);                     
@@ -135,6 +119,7 @@ botonVaciar.onclick = () => {
 
 }
 
+//ELIMINAR PRODUCTO DEL CARRITO
 const eliminarDelCarrito = (prodId) => {
     const item = carrito.find((prod) => prod.id == prodId)
     const indice = carrito.indexOf(item)
@@ -142,22 +127,13 @@ const eliminarDelCarrito = (prodId) => {
     localStorage.setItem("carrito", JSON.stringify(carrito));
     actualizarCarrito()
 
-
-    Swal.fire({
-        position: 'top-center',
-        icon: 'success',
-        title: 'Producto eliminado',
-        showConfirmButton: false,
-        timer: 800
-      })   
+    //ALERT ELIMINAR
+    alertEliminar() 
 
 }
 
 
-
-
-
-
+//ACTUALIZAR CARRITO
 const actualizarCarrito = () => {
     
     contenedorCarrito.innerHTML = ""
@@ -183,10 +159,8 @@ const actualizarCarrito = () => {
         `
         
         
-        contenedorCarrito.appendChild(div)  
-            
-
-         
+        contenedorCarrito.appendChild(div)             
+       
 
         
 
@@ -195,9 +169,7 @@ const actualizarCarrito = () => {
         
         const total = carrito.map((prod)=> (prod.precio)).reduce((carritoPrecioTotal,
         carritoPrecioActual) => carritoPrecioTotal + carritoPrecioActual, 0);
-        console.log(total)
-        
-        
+        console.log(total)               
         precioTotal.innerText = (total)
 
         
@@ -208,20 +180,15 @@ const actualizarCarrito = () => {
      })
 }
 
-       /*  const modal = document.getElementById("CarritoEnModal")
-        modal.innerText = ("holas")
-        contenedorCarrito.append(modal) */
+       
         
 
-        //FILTRAR 
+        //FUNCIÓN PARA FILTRAR PRODUCTOS
         
         function filtrarPorCat(){
 
             
-            let vertodos = document.createElement ('button')
-            vertodos.innerText = ("Ver todos")
-            vertodos.classList.add ('btn', 'btn-secondary', 'mt-5','btn-vertodos')
-            showBtnVerTodos.append(vertodos)
+            
             contenedorProductos.innerHTML= ""
 
             const filtrarproductos = stockProductos.filter((prod) => prod.categoría === buscador.value)
@@ -249,80 +216,70 @@ const actualizarCarrito = () => {
                 boton.addEventListener('click', () => {
                 agregarAlCarrito(filter.id)
 
-            //SWEET ALERT
-            Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'Agregaste al carrito',
-            text: (filter.modelo),
-            showConfirmButton: true,
-            timer: 2000
-            }) 
-        
-            })
+                //ALERT
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Agregaste al carrito',
+                    text: (filter.modelo),
+                    showConfirmButton: true,
+                    timer: 2000
+                    })      
+                })   
 
+            })           
             
+        }
 
-        
-            })
+          
 
-            vertodos.onclick = () => {
+        //BOTON VER TODOS LOS PRODUCTOS LUEGO DE FILTRAR    
+
+        let vertodos = document.createElement ('button')
+            vertodos.innerText = ("Ver todos los productos")
+            vertodos.classList.add ('btn', 'btn-dark', 'mt-5','btn-vertodos')
+            showBtnVerTodos.append(vertodos)
+
+         vertodos.onclick = () => {
             contenedorProductos.innerHTML=""
-            showProducts.innerHTML = `` 
-            mostrarproductos() 
+            showProducts.innerHTML = "" 
             
-
-            }
-        }   
+            mostrarproductos()
+        } 
         
         const formulario = document.getElementById("buscar")
-        const boton = document.getElementById("filtrar")
+              
         
-        
-        const filtrar = () =>{
-            
-            boton.addEventListener('click', () => {
+
+
+        // BOTON PARA FILTRAR PRODUCTOS
+
+            const filtrar = document.getElementById("filtrar")
+            filtrar.addEventListener('click', (filtrar) => {
             contenedorProductos.innerHTML=""
-            filtrarPorCat()
+            showProducts.innerHTML = ""
 
-        })}
+            //SWEET ALERT
+            alertBuscando()
 
-        filtrar()
-
+            filtrarPorCat()            
         
-
-        
-        
+            })
 
 
-        /* const filtrar = () =>{
+
+        // BOTON PARA SUSCRIPCIÓN
+
+            const suscribete = document.getElementById("suscribete")
+            suscribete.addEventListener('click', (suscribete) => {
             
-            console.log(formulario.value)
-        }
+            //ALERT
+            suscripcion()       
+                        
         
-        boton.addEventListener('click', filtrar ) */
+            })
 
-        
-        
-        
-
-        
-    
-        buscador.onchange = () => {
             
-            contenedorProductos.innerHTML= ""          
-            filtrarPorCat()
-            buscador.preventDefault();
-            
-        }
-
-        
-        
-
-        
-
-        
-    
 
         // TERMINAR COMPRA
 
@@ -344,17 +301,17 @@ const actualizarCarrito = () => {
          console.log(usuarioCompra)
          console.log(carrito)
 
-         let terminarPedido= document.getElementById("terminarPedido")
-
-         terminarPedido.onclick = (e) => {
-            e.preventDefault()
-            terminarCompra() 
-
-            
-
-            
-         }
          */
+
+            // BOTON TERMINAR PEDIDO
+
+            const terminarPedido = document.getElementById("terminarPedido")
+            terminarPedido.addEventListener('click', (terminarPedido) => {
+            
+            //ALERT
+            alertGracias()
+                    
+            })
 
 
 

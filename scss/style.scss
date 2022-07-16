@@ -134,7 +134,23 @@ nav div ul li a{
     }
 }
 
+.icono-contador{
+    margin-right: 20px;
+    list-style: none;
+    
+    a{
+        text-decoration: none;
+       
+    }
+    
 
+    span{
+        
+        color: #f83808;
+        font-weight: bold;
+               
+    }
+}
 
 .inner{
     
@@ -254,6 +270,7 @@ nav div ul li a{
 }
 
 .btnfiltro{
+    display: flex;    
     width: 300px;
     
 }
