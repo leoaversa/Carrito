@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 }) 
 
+ 
+
 
 
 //MOSTRAR PRODUCTOS
@@ -30,9 +32,9 @@ function mostrarproductos(){
 
    
 
-fetch('./stock.json')
-  .then((response) => response.json())
-  .then((data) => {
+    fetch('./stock.json')
+   .then((response) => response.json())
+   .then((data) => {
   	
 
     data.forEach((producto) => {
@@ -54,7 +56,9 @@ fetch('./stock.json')
     //Botón para agregar productos
     const boton = document.getElementById(`agregar${producto.id}`)
     boton.addEventListener('click', () => {
+        
         agregarAlCarrito(producto.id)
+        
 
         //ALERT
         Swal.fire({
@@ -68,8 +72,9 @@ fetch('./stock.json')
 
         
     }) 
-})
-}).catch(console.error);
+ })
+ }).catch(console.error);
+ 
 }
 
 
@@ -94,31 +99,37 @@ avisoVacio()
 
 //AGREGAR PRODUCTOS AL CARRITO, CANTIDAD++
 const agregarAlCarrito = (prodId) => {
-    showAllProducts.innerHTML=""
+    
+    /* showAllProducts.innerHTML="" */
     const existe = carrito.some (prod => prod.id === prodId)
 
     if(existe){
         const prod = carrito.map (prod =>{
             if (prod.id === prodId){
                 prod.cantidad++
-            }
+            }actualizarCarrito()
         })
     } else {
 
         fetch('./stock.json')
         .then((response) => response.json())
-        .then((data) => {    
+        .then((data) => {
+                
     
-    const item = data.find((prod) => prod.id === prodId)
+    const item = data.find((prod) => prod.id == prodId)
     carrito.push(item)
-    console.log(carrito)    
-    
+    localStorage.setItem("carrito", JSON.stringify(carrito))
+    actualizarCarrito() 
 
-    localStorage.setItem("carrito", JSON.stringify(carrito));   
     
-    actualizarCarrito()    
-    })
-    }
+    })      
+
+    } 
+
+     
+    
+    
+    
     
 }
 
@@ -139,6 +150,11 @@ const eliminarDelCarrito = (prodId) => {
     const indice = carrito.indexOf(item)
     carrito.splice(indice,1)
     localStorage.setItem("carrito", JSON.stringify(carrito));
+    
+        if(!carrito.length) {
+            precioTotal.innerText="" 
+        }
+    
     actualizarCarrito()
 
     //ALERT ELIMINAR

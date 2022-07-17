@@ -77,6 +77,42 @@
     "cantidad": 1, 
     "precio": 40000,
     "img": "./assets/img/adi7.jpg"
+},
+    { 
+    
+    "id": 9,
+    "categoría": "asfalto", 
+    "modelo": "Ultraboost 5.0 DNA",  
+    "cantidad": 1, 
+    "precio": 55000,
+    "img": "./assets/img/adi8.jpg"
+},
+    { 
+    
+    "id": 10,
+    "categoría": "trial", 
+    "modelo": "Hu Nmd",  
+    "cantidad": 1, 
+    "precio": 50000,
+    "img": "./assets/img/adi9.jpg"
+},
+    { 
+    
+    "id": 11,
+    "categoría": "trial", 
+    "modelo": "Mnd m1",  
+    "cantidad": 1, 
+    "precio": 60000,
+    "img": "./assets/img/adi10.jpg"
+},
+    { 
+    
+    "id": 12,
+    "categoría": "trial", 
+    "modelo": "Retropy P9",  
+    "cantidad": 1, 
+    "precio": 65000,
+    "img": "./assets/img/adi11.jpg"
 }
 
 

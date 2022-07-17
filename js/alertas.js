@@ -45,7 +45,7 @@ Swal.fire({
           title: "¡Gracias por tu compra!",
           text: "Tu envío esta en camino",
           showConfirmButton: true,
-          timer: 3000,
+          timer: 5000,
         });
       };
 

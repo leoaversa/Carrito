@@ -15,8 +15,9 @@ nav div ul li a {
 .cover {
   background-image: url(../assets/img/cover1.5.jpg);
   background-repeat: no-repeat;
-  background-position: center;
-  height: 500px;
+  background-position-y: 65%;
+  height: 550px;
+  background-size: auto;
 }
 
 .cover h1 {
@@ -169,6 +170,10 @@ nav div ul li a {
   margin-left: 300px;
   color: black;
   font-size: 20px;
+}
+
+.videoceans {
+  height: 50%;
 }
 
 .formulario-carrito {

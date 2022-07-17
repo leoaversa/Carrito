@@ -21,8 +21,9 @@ nav div ul li a{
 .cover {
     background-image: url(../assets/img/cover1.5.jpg);
     background-repeat: no-repeat;
-    background-position: center;
-    height: 500px;
+    background-position-y: 65%;
+    height: 550px;
+    background-size: auto;
 
     h1{
         color: rgb(255, 255, 255);
@@ -191,6 +192,10 @@ nav div ul li a{
 
 }
 
+.videoceans{
+    height: 50%;
+}
+
 
 
 .formulario-carrito{
@@ -247,6 +252,7 @@ nav div ul li a{
 }
 
 .carrito-vacio{
+
     h2{
         margin-top: 100px;
         font-size: 30px;
@@ -283,6 +289,7 @@ nav div ul li a{
 }
 
 .finalizar-compra{
+    
     margin: 0 auto;
     background-color: #ECEEF0;
     padding: 50px;
@@ -304,6 +311,7 @@ nav div ul li a{
     margin-left: 290px;
     margin-top: 30px;
     margin-bottom: 0px;
+    
     
 }
 
