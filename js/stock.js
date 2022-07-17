@@ -1,4 +1,4 @@
-const stockProductos = [
+/* const stockProductos = [
 
     {   
 
@@ -79,4 +79,4 @@ const stockProductos = [
 }
 
 
-]
+] */

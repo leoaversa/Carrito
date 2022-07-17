@@ -24,10 +24,18 @@ document.addEventListener('DOMContentLoaded', () => {
 }) 
 
 
+
 //MOSTRAR PRODUCTOS
 function mostrarproductos(){
-stockProductos.forEach((producto) => {
 
+   
+
+fetch('./stock.json')
+  .then((response) => response.json())
+  .then((data) => {
+  	
+
+    data.forEach((producto) => {
 
     const div = document.createElement('div')
     div.classList.add('card')
@@ -61,7 +69,9 @@ stockProductos.forEach((producto) => {
         
     }) 
 })
+}).catch(console.error);
 }
+
 
 mostrarproductos()
 
@@ -94,17 +104,21 @@ const agregarAlCarrito = (prodId) => {
             }
         })
     } else {
+
+        fetch('./stock.json')
+        .then((response) => response.json())
+        .then((data) => {    
     
-    const item = stockProductos.find((prod) => prod.id === prodId)
+    const item = data.find((prod) => prod.id === prodId)
     carrito.push(item)
     console.log(carrito)    
-    }
+    
 
     localStorage.setItem("carrito", JSON.stringify(carrito));   
     
-   
     actualizarCarrito()    
-    
+    })
+    }
     
 }
 
@@ -185,13 +199,15 @@ const actualizarCarrito = () => {
 
         //FUNCIÓN PARA FILTRAR PRODUCTOS
         
-        function filtrarPorCat(){
-
+        function filtrarPorCat(){   
             
+            fetch('./stock.json')
+            .then((response) => response.json())
+            .then((data) => {
             
             contenedorProductos.innerHTML= ""
 
-            const filtrarproductos = stockProductos.filter((prod) => prod.categoría === buscador.value)
+            const filtrarproductos = data.filter((prod) => prod.categoría === buscador.value)
             console.log(filtrarproductos)
 
             filtrarproductos.forEach((filter) => {
@@ -227,7 +243,7 @@ const actualizarCarrito = () => {
                     })      
                 })   
 
-            })           
+            })    })       
             
         }
 

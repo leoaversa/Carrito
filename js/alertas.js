@@ -43,7 +43,7 @@ Swal.fire({
           position: "top-center",
           icon: "success",
           title: "¡Gracias por tu compra!",
-          text: "Envío en proceso",
+          text: "Tu envío esta en camino",
           showConfirmButton: true,
           timer: 3000,
         });
