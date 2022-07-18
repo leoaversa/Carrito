@@ -100,7 +100,7 @@ avisoVacio()
 //AGREGAR PRODUCTOS AL CARRITO, CANTIDAD++
 const agregarAlCarrito = (prodId) => {
     
-    /* showAllProducts.innerHTML="" */
+    showAllProducts.innerHTML=""
     const existe = carrito.some (prod => prod.id === prodId)
 
     if(existe){
@@ -259,7 +259,8 @@ const actualizarCarrito = () => {
                     })      
                 })   
 
-            })    })       
+            })    }) 
+            
             
         }
 
@@ -309,33 +310,12 @@ const actualizarCarrito = () => {
             suscripcion()       
                         
         
-            })
+            })      
+         
 
-            
+        
 
-        // TERMINAR COMPRA
-
-        /*  function terminarCompra () {
-            class Usuario {
-                constructor(nombre, direccion, mail){
-                    this.nombre = nombre,
-                    this.direccion = direccion,
-                    this.mail = mail
-                }
-            }
-         }
-
-         let nombre = document.getElementById ('nombre')
-         let direccion = document.getElementById ('direccion')
-         let email = document.getElementById ('email')
-
-         let usuarioCompra = new Usuario (nombre.value, direccion.value, email.value)
-         console.log(usuarioCompra)
-         console.log(carrito)
-
-         */
-
-            // BOTON TERMINAR PEDIDO
+        // BOTON TERMINAR PEDIDO
 
             const terminarPedido = document.getElementById("terminarPedido")
             terminarPedido.addEventListener('click', (terminarPedido) => {
