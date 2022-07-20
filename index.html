@@ -186,41 +186,40 @@
 
 <form class="needs-validation finalizar-compra" novalidate>
   <div class="form-row">
+    
     <div class="col-md-4 mb-3">
-      <label for="validationTooltip01">Nombre</label>
-      <input id="nombre" type="text" class="form-control" id="validationTooltip01" placeholder="tu nombre y apellido" value="" required>
-      <div class="valid-tooltip">
-        ingresado!
-      </div>
+      <label>Nombre</label>
+      <input id="nombre" type="text" class="form-control" id="validationTooltip01" placeholder="tu nombre y apellido" required>
+      <div</div>
     </div>
+    
     <div class="col-md-4 mb-3">
       <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
     <div class="col-sm-10">
-      <input id="email" type="email" class="form-control" id="inputEmail3" placeholder="tu email" value="" required>
+      <input id="email" type="email" class="form-control" id="inputEmail3" placeholder="tu email" required>
       <div class="valid-tooltip">
-    </div>
-    
-  </div>
+    </div></div>
     </div>
     
   <div class="form-row">
     <div class="col-md-6 mb-3">
       <label for="validationTooltip03">Ciudad</label>
       <input type="text" class="form-control" id="ciudad" placeholder="tu ciudad" required>
-      <div class="invalid-tooltip">
-        Ingresa tu ciudad
-      </div>
+      <div class="invalid-tooltip"></div>
     </div>    
+    
     <div class="col-md-3 mb-3">
       <label for="validationTooltip04">País</label>
       <input type="text" class="form-control" id="pais" placeholder="tu país" required>
     </div>
+    
     <div class="col-md-3 mb-3">
       <label for="validationDefault05" class="form-label">CP</label>
       <input type="text" class="form-control" id="validationDefault05" placeholder="tu código postal"required>
     </div>
     </div>
   </div>
+  
   <button id="terminarPedido" class="btn btn-primary" type="submit">Finalizar compra</button>
   <img class="tarjetas" src="./assets/img/tarjetas.webp" alt="">
 </form>
@@ -269,7 +268,10 @@
           <form>
             <h5>Recibe las mejores ofertas</h5>
             <p>Tendencias | Ropa | Zapatillas</p>
-            <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+            <div class="d-flex flex-column flex-sm-row w-100 gap-2 needs-validation" novalidate>
+
+              <!-- BOTÓN SUSCRIPCIÓN -->
+
               <label for="newsletter1" class="visually-hidden">Email address</label>
               <input id="newsletter1" type="text" class="form-control" placeholder="Ingresa tu email">
               <button id="suscribete" class="btn btn-primary" type="button">Suscríbete</button>

@@ -324,6 +324,9 @@ const actualizarCarrito = () => {
             alertGracias()
                     
             })
+            
+
+
 
             
             
