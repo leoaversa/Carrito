@@ -325,6 +325,38 @@ const actualizarCarrito = () => {
                     
             })
 
+            
+            
+        //VALIDAR FORMULARIO            
+
+            const forms = document.querySelectorAll(".needs-validation");
+
+            Array.from(forms).forEach((form) => {
+            form.addEventListener(
+            "submit",
+            (event) => {
+            event.preventDefault();
+            if (!form.checkValidity()) {
+            
+            Swal.fire("Por favor completa todos tus datos");
+
+            event.stopPropagation();
+            }
+
+            form.classList.add("was-validated");
+            },
+            false
+            );
+            });
+
+
+
+
+
+
+        
+        
+
 
 
     
