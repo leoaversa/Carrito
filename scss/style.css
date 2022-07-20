@@ -527,4 +527,26 @@ nav div ul li a {
     margin-top: 20px;
   }
 }
+
+@media only screen and (max-width: 500px) {
+  .carrito-vacio h2 {
+    margin-top: 80px;
+    font-size: 10px;
+    margin-left: -20px;
+    font-weight: 800;
+    padding: 0px;
+  }
+  .carrito-vacio p {
+    font-size: 10px;
+    margin-left: 100px;
+    font-weight: 400;
+    margin-top: 0px;
+    width: 200px;
+  }
+  .carrito-vacio img {
+    width: 50px;
+    margin-left: -80px;
+    margin-top: -0px;
+  }
+}
 /*# sourceMappingURL=style.css.map */
