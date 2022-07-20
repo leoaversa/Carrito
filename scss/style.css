@@ -294,6 +294,9 @@ nav div ul li a {
     gap: 20px;
     width: 1000px;
   }
+  .gif {
+    width: 800px;
+  }
 }
 
 @media only screen and (max-width: 1200px) {
@@ -314,7 +317,7 @@ nav div ul li a {
   }
   .gif {
     width: 800px;
-    margin-left: 50px;
+    margin-left: 0px;
   }
   .finalizar-compra {
     width: 800px;
@@ -322,13 +325,24 @@ nav div ul li a {
   .carrito-vacio h2 {
     margin-top: 100px;
     font-size: 30px;
-    margin-left: 300px;
+    margin-left: 140px;
     font-weight: 800;
   }
   .carrito-vacio p {
     font-size: 15px;
-    margin-left: 420px;
-    font-weight: 400;
+    margin-left: 135px;
+    font-weight: 600;
+    margin-top: 30px;
+  }
+  .carrito-vacio img {
+    margin-left: 20px;
+  }
+  .precio-total {
+    font-size: 20px;
+    margin-left: 300px;
+    font-weight: 600;
+    margin-top: 0px;
+    margin-left: 130px;
   }
 }
 
@@ -360,8 +374,35 @@ nav div ul li a {
     width: 400px;
   }
   .gif {
-    width: 600px;
-    margin-left: -50px;
+    width: 350px;
+    margin-left: 0px;
+  }
+  .tarjetas {
+    width: 100px;
+  }
+  .precio-total {
+    margin-left: 30px;
+  }
+  .carrito-vacio h2 {
+    margin-top: 100px;
+    font-size: 20px;
+    margin-left: 30px;
+    font-weight: 800;
+  }
+  .carrito-vacio p {
+    font-size: 10px;
+    margin-left: 35px;
+    font-weight: 600;
+    margin-top: 40px;
+  }
+  .carrito-vacio img {
+    margin-left: -80px;
+  }
+  .formcompra {
+    margin-left: 10px;
+  }
+  .vaciarCarrito {
+    margin-left: 30px;
   }
 }
 
