@@ -283,10 +283,6 @@ nav div ul li a {
   margin-bottom: 0px;
 }
 
-.modalform {
-  width: 100%;
-}
-
 /* MEDIA QUERYS */
 @media only screen and (max-width: 1400px) {
   .ecomercejs {
@@ -435,8 +431,8 @@ nav div ul li a {
     width: 400px;
   }
   .gif {
-    width: 450px;
-    margin-left: -50px;
+    width: 300px;
+    margin-left: 0px;
   }
   .carrito-vacio h2 {
     margin-top: 100px;
@@ -478,6 +474,16 @@ nav div ul li a {
     margin-left: 0px;
     margin-top: 30px;
     margin-bottom: 0px;
+  }
+  .finalizar-compra {
+    width: 350px;
+  }
+  .tarjetas {
+    background-color: #fbfbfb;
+    padding: 5px;
+    width: 160px;
+    margin-left: 0px;
+    margin-top: 20px;
   }
 }
 /*# sourceMappingURL=style.css.map */

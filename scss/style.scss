@@ -315,9 +315,7 @@ nav div ul li a{
     
 }
 
-.modalform{
-    width: 100%;
-}
+
 
 /* MEDIA QUERYS */
 
@@ -498,8 +496,8 @@ nav div ul li a{
 }
 
 .gif{
-    width: 450px;
-    margin-left: -50px;
+    width: 300px;
+    margin-left: 0px;
 }
 .carrito-vacio {
 
@@ -553,6 +551,18 @@ nav div ul li a{
     margin-bottom: 0px;
     
     
+}
+
+.finalizar-compra{
+    width: 350px;
+}
+
+.tarjetas{
+    background-color: #fbfbfb;
+    padding: 5px;
+    width: 160px;
+    margin-left: 0px;
+    margin-top: 20px;
 }
 
 
